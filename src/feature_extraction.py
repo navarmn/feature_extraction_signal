@@ -25,7 +25,7 @@ class Fourier(BaseEstimator, TransformerMixin):
         # pre-settings:
         L = X.size
         self.resolution = self.fs/L
-        frequency = frequency = self.resolution*(np.linspace(0,L/2, num=L/2))
+        frequency = frequency = self.resolution*(np.linspace(0,int(L/2), num=int(L/2)))
         # Fourier need to be normalized by signal lenght
         buffer = np.abs(np.fft.fft(X)/L)
 
